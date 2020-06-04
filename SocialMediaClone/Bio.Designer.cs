@@ -30,6 +30,8 @@
         {
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.saveButton = new FontAwesome.Sharp.IconButton();
+            this.editButton = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.relationEdit = new System.Windows.Forms.ComboBox();
             this.dobEdit = new System.Windows.Forms.DateTimePicker();
@@ -38,8 +40,6 @@
             this.emailEdit = new System.Windows.Forms.TextBox();
             this.lastNameEdit = new System.Windows.Forms.TextBox();
             this.firstNameEdit = new System.Windows.Forms.TextBox();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
             this.relationLabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
@@ -71,7 +71,10 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.saveButton);
+            this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.relationEdit);
             this.panel1.Controls.Add(this.dobEdit);
@@ -80,8 +83,6 @@
             this.panel1.Controls.Add(this.emailEdit);
             this.panel1.Controls.Add(this.lastNameEdit);
             this.panel1.Controls.Add(this.firstNameEdit);
-            this.panel1.Controls.Add(this.saveButton);
-            this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.relationLabel);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.phoneLabel);
@@ -100,6 +101,52 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(742, 546);
             this.panel1.TabIndex = 0;
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.saveButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.saveButton.IconColor = System.Drawing.Color.Green;
+            this.saveButton.IconSize = 32;
+            this.saveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.saveButton.Location = new System.Drawing.Point(252, 458);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.saveButton.Rotation = 0D;
+            this.saveButton.Size = new System.Drawing.Size(113, 61);
+            this.saveButton.TabIndex = 60;
+            this.saveButton.Text = "Save";
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.saveButton.UseVisualStyleBackColor = false;
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.editButton.FlatAppearance.BorderSize = 0;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.editButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.editButton.IconColor = System.Drawing.Color.Green;
+            this.editButton.IconSize = 32;
+            this.editButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editButton.Location = new System.Drawing.Point(122, 458);
+            this.editButton.Name = "editButton";
+            this.editButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.editButton.Rotation = 0D;
+            this.editButton.Size = new System.Drawing.Size(113, 61);
+            this.editButton.TabIndex = 59;
+            this.editButton.Text = "Edit";
+            this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.editButton.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -187,39 +234,6 @@
             this.firstNameEdit.Size = new System.Drawing.Size(310, 20);
             this.firstNameEdit.TabIndex = 51;
             this.firstNameEdit.Visible = false;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.saveButton.FlatAppearance.BorderSize = 0;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.saveButton.Location = new System.Drawing.Point(201, 465);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(65, 31);
-            this.saveButton.TabIndex = 50;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Visible = false;
-            // 
-            // editButton
-            // 
-            this.editButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.editButton.FlatAppearance.BorderSize = 0;
-            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.editButton.Location = new System.Drawing.Point(133, 465);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(62, 31);
-            this.editButton.TabIndex = 49;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = true;
             // 
             // relationLabel
             // 
@@ -409,8 +423,6 @@
         private System.Windows.Forms.TextBox emailEdit;
         private System.Windows.Forms.TextBox lastNameEdit;
         private System.Windows.Forms.TextBox firstNameEdit;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label relationLabel;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label phoneLabel;
@@ -425,5 +437,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton editButton;
+        private FontAwesome.Sharp.IconButton saveButton;
     }
 }
