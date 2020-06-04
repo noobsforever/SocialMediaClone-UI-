@@ -240,7 +240,7 @@
             this.relationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.relationLabel.AutoSize = true;
             this.relationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.relationLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.relationLabel.ForeColor = System.Drawing.Color.White;
             this.relationLabel.Location = new System.Drawing.Point(300, 419);
             this.relationLabel.Name = "relationLabel";
             this.relationLabel.Size = new System.Drawing.Size(0, 20);
@@ -263,7 +263,7 @@
             this.phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.phoneLabel.ForeColor = System.Drawing.Color.White;
             this.phoneLabel.Location = new System.Drawing.Point(300, 383);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(0, 20);
@@ -286,7 +286,7 @@
             this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.emailLabel.ForeColor = System.Drawing.Color.White;
             this.emailLabel.Location = new System.Drawing.Point(300, 348);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(0, 20);
@@ -309,7 +309,7 @@
             this.dobLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dobLabel.AutoSize = true;
             this.dobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.dobLabel.ForeColor = System.Drawing.Color.White;
             this.dobLabel.Location = new System.Drawing.Point(300, 311);
             this.dobLabel.Name = "dobLabel";
             this.dobLabel.Size = new System.Drawing.Size(0, 20);
@@ -332,7 +332,7 @@
             this.genderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderLabel.AutoSize = true;
             this.genderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.genderLabel.ForeColor = System.Drawing.Color.White;
             this.genderLabel.Location = new System.Drawing.Point(300, 270);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(0, 20);
@@ -355,7 +355,7 @@
             this.lastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.lastNameLabel.ForeColor = System.Drawing.Color.White;
             this.lastNameLabel.Location = new System.Drawing.Point(300, 232);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(0, 20);
@@ -378,7 +378,7 @@
             this.firstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLabel.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.firstNameLabel.ForeColor = System.Drawing.Color.White;
             this.firstNameLabel.Location = new System.Drawing.Point(300, 196);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(0, 20);
@@ -405,6 +405,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "Bio";
             this.Text = "Bio";
+            this.Load += new System.EventHandler(this.Bio_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

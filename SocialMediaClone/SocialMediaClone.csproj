@@ -151,12 +151,19 @@
     <Compile Include="SearchItem.Designer.cs">
       <DependentUpon>SearchItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchResult.Designer.cs">
+      <DependentUpon>SearchResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Timeline.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Timeline.Designer.cs">
       <DependentUpon>Timeline.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="Bio.resx">
       <DependentUpon>Bio.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchItem.resx">
       <DependentUpon>SearchItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchResult.resx">
+      <DependentUpon>SearchResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Timeline.resx">
       <DependentUpon>Timeline.cs</DependentUpon>

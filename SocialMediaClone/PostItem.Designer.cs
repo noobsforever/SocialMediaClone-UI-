@@ -34,11 +34,11 @@
             this.commentButton = new FontAwesome.Sharp.IconButton();
             this.dislikeButton = new FontAwesome.Sharp.IconButton();
             this.likeButton = new FontAwesome.Sharp.IconButton();
+            this.fullnameLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.descriptionLabel = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -152,75 +152,77 @@
             this.likeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.likeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.likeButton.UseVisualStyleBackColor = false;
+            this.likeButton.Click += new System.EventHandler(this.likeButton_Click);
+            // 
+            // fullnameLabel
+            // 
+            this.fullnameLabel.AutoSize = true;
+            this.fullnameLabel.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullnameLabel.ForeColor = System.Drawing.Color.White;
+            this.fullnameLabel.Location = new System.Drawing.Point(4, 4);
+            this.fullnameLabel.Name = "fullnameLabel";
+            this.fullnameLabel.Size = new System.Drawing.Size(73, 17);
+            this.fullnameLabel.TabIndex = 0;
+            this.fullnameLabel.Text = "Full Name";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.ForeColor = System.Drawing.Color.Silver;
+            this.dateLabel.Location = new System.Drawing.Point(4, 21);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(56, 17);
+            this.dateLabel.TabIndex = 1;
+            this.dateLabel.Text = "6/2/2020";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.ForeColor = System.Drawing.Color.Silver;
+            this.timeLabel.Location = new System.Drawing.Point(4, 38);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(59, 17);
+            this.timeLabel.TabIndex = 2;
+            this.timeLabel.Text = "4:02 PM";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.timeLabel);
+            this.panel2.Controls.Add(this.dateLabel);
+            this.panel2.Controls.Add(this.fullnameLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(807, 71);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // descriptionLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Full Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(4, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "6/2/2020";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(4, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "4:02 PM";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 71);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(807, 188);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.descriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descriptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.ForeColor = System.Drawing.Color.White;
+            this.descriptionLabel.Location = new System.Drawing.Point(0, 71);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.ReadOnly = true;
+            this.descriptionLabel.Size = new System.Drawing.Size(807, 188);
+            this.descriptionLabel.TabIndex = 3;
+            this.descriptionLabel.Text = resources.GetString("descriptionLabel.Text");
             // 
             // PostItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "PostItem";
             this.Size = new System.Drawing.Size(807, 313);
+            this.Load += new System.EventHandler(this.PostItem_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -235,10 +237,10 @@
         private FontAwesome.Sharp.IconButton commentButton;
         private FontAwesome.Sharp.IconButton dislikeButton;
         private FontAwesome.Sharp.IconButton likeButton;
+        private System.Windows.Forms.Label fullnameLabel;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox descriptionLabel;
     }
 }

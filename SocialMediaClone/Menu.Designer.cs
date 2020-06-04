@@ -31,7 +31,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.logoutButton = new FontAwesome.Sharp.IconButton();
             this.notificationsButton = new FontAwesome.Sharp.IconButton();
             this.friendsButton = new FontAwesome.Sharp.IconButton();
@@ -81,23 +81,24 @@
             this.iconButton1.Text = "Search";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.searchBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 366);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(239, 61);
             this.panel1.TabIndex = 7;
             // 
-            // textBox1
+            // searchBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(7, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 34);
-            this.textBox1.TabIndex = 1;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.Location = new System.Drawing.Point(7, 15);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(226, 34);
+            this.searchBox.TabIndex = 1;
             // 
             // logoutButton
             // 
@@ -281,7 +282,7 @@
         private System.Windows.Forms.Panel panelDesktop;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchBox;
     }
 }
 

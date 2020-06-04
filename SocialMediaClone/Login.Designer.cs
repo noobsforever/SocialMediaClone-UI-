@@ -76,6 +76,7 @@
             this.gotoRegisterButton.TabIndex = 15;
             this.gotoRegisterButton.Text = "Register";
             this.gotoRegisterButton.UseVisualStyleBackColor = false;
+            this.gotoRegisterButton.Click += new System.EventHandler(this.gotoRegisterButton_Click);
             // 
             // loginConfirmButton
             // 
@@ -88,6 +89,7 @@
             this.loginConfirmButton.TabIndex = 12;
             this.loginConfirmButton.Text = "Login";
             this.loginConfirmButton.UseVisualStyleBackColor = false;
+            this.loginConfirmButton.Click += new System.EventHandler(this.loginConfirmButton_Click);
             // 
             // passwordLogin
             // 
@@ -146,6 +148,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

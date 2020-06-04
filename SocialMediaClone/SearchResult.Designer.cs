@@ -1,6 +1,6 @@
 ﻿namespace SocialMediaClone
 {
-    partial class Timeline
+    partial class SearchResult
     {
         /// <summary>
         /// Required designer variable.
@@ -37,19 +37,20 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1073, 649);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 561);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // Timeline
+            // SearchResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1073, 649);
+            this.ClientSize = new System.Drawing.Size(656, 561);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Timeline";
-            this.Text = "Timeline";
-            this.Load += new System.EventHandler(this.Timeline_Load);
+            this.Name = "SearchResult";
+            this.Text = "SearchResult";
+            this.Load += new System.EventHandler(this.SearchResult_Load);
             this.ResumeLayout(false);
 
         }

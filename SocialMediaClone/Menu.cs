@@ -47,7 +47,7 @@ namespace SocialMediaClone
             OpenChildForm(new Newsfeed());
         }
 
-        private void ActivateButton(object senderBtn, Color color)
+        public void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
@@ -133,6 +133,9 @@ namespace SocialMediaClone
         private void logoutButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            this.Close();
+            Login login = new Login();
+            login.Show();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -144,6 +147,12 @@ namespace SocialMediaClone
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            SearchResult result = new SearchResult(searchBox.Text);
+            result.Show();
         }
     }
 }

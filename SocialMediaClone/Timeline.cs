@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace SocialMediaClone
 {
     public partial class Timeline : Form
     {
+        public static IMongoClient client { get; set; }
+        public static IMongoDatabase database { get; set; }
+        public static string MongoConnection = "mongodb+srv://sunderali416:sunderali416@clustersocialmediaproject-z6nzz.mongodb.net/test?retryWrites=true&w=majority";
+        public static string MongoDatabase = "socialmediaproject";
         public Timeline()
         {
             InitializeComponent();
@@ -20,6 +26,46 @@ namespace SocialMediaClone
         private void postItem1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Timeline_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                client = new MongoClient(MongoConnection);
+                database = client.GetDatabase(MongoDatabase);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+                throw;
+            }
+
+
+
+
+
+
+
+            var i = 0;
+            var collection = database.GetCollection<BsonDocument>("posts");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("userId", User.id);
+            var result = collection.Find(filter).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+            PostItem[] postItems = new PostItem[result.Count];
+            foreach (var post in result)
+            {
+                postItems[i] = new PostItem();
+                postItems[i].postId = post[0].ToString();
+                postItems[i].postDescription = post[3].ToString();
+                postItems[i].postDate = post[4].ToString();
+                postItems[i].postTime = post[5].ToString();
+                postItems[i].postFullname = post[6].ToString();
+                postItems[i].postLikes = post[7].ToString();
+                postItems[i].Margin = new Padding(14, 14, 14, 14);
+                flowLayoutPanel1.Controls.Add(postItems[i]);
+                i++;
+            }
         }
     }
 }
