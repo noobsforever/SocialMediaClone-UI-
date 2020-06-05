@@ -72,10 +72,11 @@ namespace SocialMediaClone
                         postItems[i].postTime = post[5].ToString();
                         postItems[i].postFullname = post[6].ToString();
                         postItems[i].postLikes = post[7].ToString();
-                        postItems[i].Dock = DockStyle.Top;
+                        //postItems[i].Dock = DockStyle.Top;
                         postItems[i].Margin = new Padding(14, 14, 14, 14);
                         flowLayoutPanel1.Controls.Add(postItems[i]);
                         i++;
+                        emptyLabel.Text = "";
                     }
                 }
 
@@ -89,13 +90,44 @@ namespace SocialMediaClone
                     postItems[i].postTime = post[5].ToString();
                     postItems[i].postFullname = post[6].ToString();
                     postItems[i].postLikes = post[7].ToString();
-                    postItems[i].Dock = DockStyle.Top;
+                    //postItems[i].Dock = DockStyle.Top;
                     postItems[i].Margin = new Padding(14, 14, 14, 14);
                     flowLayoutPanel1.Controls.Add(postItems[i]);
                     i++;
+                    emptyLabel.Text = "";
                 }
 
             }
+            if (i == 0)
+            {
+                emptyLabel.Text = "Your feed is empty.....";
+            }
+
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            var collection = database.GetCollection<BsonDocument>("posts");
+            var post = new BsonDocument
+            {
+                {"userId", User.id },
+                {"title", "empty" },
+                {"description", descriptionText.Text },
+                {"date_created", DateTime.Today.ToString("dd/MM/yyyy") },
+                {"time_created", DateTime.Now.ToString("HH:mm:ss tt") },
+                {"posted_by", User.firstName+" "+User.lastName },
+                {"likes", 0 },
+                {"comments",0 },
+            };
+            collection.InsertOne(post);
+           Menu menu = new Menu();
+           menu.Show();
+           menu.OpenChildForm(new Newsfeed());
+           ParentForm.Hide();
+        }
+
+        private void descriptionText_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

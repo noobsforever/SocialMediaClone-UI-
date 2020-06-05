@@ -81,5 +81,23 @@ namespace SocialMediaClone
         {
 
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            var collection = database.GetCollection<BsonDocument>("comments");
+            var comment = new BsonDocument
+            {
+                {"userId", User.id },
+                {"description", descriptionText.Text },
+                {"date_created", DateTime.Today.ToString("dd/MM/yyyy") },
+                {"time_created", DateTime.Now.ToString("HH:mm:ss tt") },
+                {"posted_by", User.firstName+" "+User.lastName },
+                {"post_id",postId },
+            };
+            collection.InsertOne(comment);
+            comment com = new comment(postId);
+            this.Hide();
+            com.Show();
+        }
     }
 }

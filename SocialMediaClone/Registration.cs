@@ -37,13 +37,28 @@ namespace SocialMediaClone
             }
             User.friends.Clear();
             User.friends2.Clear();
+            this.genderRegister.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void registerConfirmButton_Click(object sender, EventArgs e)
         {
+            bool pass = true;
             string dobText = dobRegister.Value.ToString();
             var collection = database.GetCollection<BsonDocument>("users");
-            var user = new BsonDocument
+            var builder1 = Builders<BsonDocument>.Filter;
+            var filter1 = builder1.Or(builder1.Eq("email", emailRegister.Text), builder1.Eq("username", usernameRegister.Text));
+            var result1 = collection.Find(filter1).ToList();
+            if (result1.Count > 0)
+            {
+                MessageBox.Show("A user with the same email or username already exists...");
+                this.Close();
+                Registration register = new Registration();
+                register.Show();
+                pass = false;
+            }
+            if (pass)
+            {
+                var user = new BsonDocument
             {
                 {"firstName", firstNameRegister.Text },
                 {"lastName", lastNameRegister.Text },
@@ -59,11 +74,12 @@ namespace SocialMediaClone
 
 
             };
-            collection.InsertOne(user);
-            MessageBox.Show("Registration Successful");
-            this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
+                collection.InsertOne(user);
+                MessageBox.Show("Registration Successful");
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
 
         private void gotoLoginButton_Click(object sender, EventArgs e)

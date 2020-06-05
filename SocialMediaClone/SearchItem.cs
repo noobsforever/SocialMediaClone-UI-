@@ -156,7 +156,11 @@ namespace SocialMediaClone
                 }
                 if (ParentForm.Text == "Notifications")
                 {
-                    ParentForm.Update();
+                    ParentForm.ParentForm.Hide();
+                    ParentForm.Hide();
+                    Menu menu = new Menu();
+                    menu.OpenChildForm(new Notifications());
+                    menu.Show();
                 }
 
                 else
@@ -188,9 +192,12 @@ namespace SocialMediaClone
                 var result3 = collection.UpdateOne(filter2, update2);
                 if (ParentForm.Text == "Friends")
                 {
-                    Friends friends = new Friends();
+                    
+                    ParentForm.ParentForm.Hide();
                     ParentForm.Hide();
-                    friends.Show();
+                    Menu menu = new Menu();
+                    menu.OpenChildForm(new Friends());
+                    menu.Show();
                 }
                 else
                 {

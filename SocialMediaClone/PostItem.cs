@@ -43,7 +43,7 @@ namespace SocialMediaClone
         public string postLikes
         {
             get { return post_likes; }
-            set { post_likes = value;  }
+            set { post_likes = value; likeLabel.Text = value; }
         }
 
 
@@ -121,7 +121,7 @@ namespace SocialMediaClone
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("post_id", postId);
             var result2 = collection.Find(filter).ToList();
-            //commentLabel.Text = result2.Count.ToString();
+            commentLabel.Text = result2.Count.ToString();
 
             var collection1 = database.GetCollection<BsonDocument>("users");
             var filter2 = builder.Eq("_id", ObjectId.Parse(User.id));
@@ -146,7 +146,62 @@ namespace SocialMediaClone
 
         private void likeButton_Click(object sender, EventArgs e)
         {
+            var likes = Convert.ToInt32(likeLabel.Text);
+            likes++;
+            var collection = database.GetCollection<BsonDocument>("posts");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("_id", ObjectId.Parse(postId));
+            var update = Builders<BsonDocument>.Update.Set("likes", likes);
+            var result = collection.UpdateOne(filter, update);
+            var result2 = collection.Find(filter).ToList();
+            likeLabel.Text = likes.ToString();
+            dislikeButton.Show();
+            likeButton.Hide();
+            var collection2 = database.GetCollection<BsonDocument>("users");
+            var filter2 = builder.Eq("_id", ObjectId.Parse(User.id));
+            var updateLike = Builders<BsonDocument>.Update.Push("liked", postId);
+            var updateDislike = Builders<BsonDocument>.Update.Pull("disliked", postId);
+            var query1 = collection2.UpdateOne(filter2, updateLike);
+            var query2 = collection2.UpdateOne(filter2, updateDislike);
+        }
 
+        private void likeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dislikeButton_Click(object sender, EventArgs e)
+        {
+            var likes = Convert.ToInt32(likeLabel.Text);
+            likes--;
+            var collection = database.GetCollection<BsonDocument>("posts");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("_id", ObjectId.Parse(postId));
+            var update = Builders<BsonDocument>.Update.Set("likes", likes);
+            var result = collection.UpdateOne(filter, update);
+            var result2 = collection.Find(filter).ToList();
+            likeLabel.Text = likes.ToString();
+            dislikeButton.Hide();
+            likeButton.Show();
+            var collection2 = database.GetCollection<BsonDocument>("users");
+            var filter2 = builder.Eq("_id", ObjectId.Parse(User.id));
+            var updateLike = Builders<BsonDocument>.Update.Pull("liked", postId);
+            var updateDislike = Builders<BsonDocument>.Update.Push("disliked", postId);
+            var query1 = collection2.UpdateOne(filter2, updateLike);
+            var query2 = collection2.UpdateOne(filter2, updateDislike);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var collection = database.GetCollection<BsonDocument>("posts");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("_id", ObjectId.Parse(postId));
+            var result = collection.DeleteOne(filter);
+            ParentForm.ParentForm.Hide();
+            ParentForm.Hide();
+            Menu menu = new Menu();
+            menu.OpenChildForm(new Timeline());
+            menu.Show();
         }
     }
 }

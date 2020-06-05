@@ -124,6 +124,7 @@
             this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // editButton
             // 
@@ -147,6 +148,7 @@
             this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // label1
             // 

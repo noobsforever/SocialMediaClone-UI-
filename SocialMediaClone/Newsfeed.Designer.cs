@@ -29,33 +29,88 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.descriptionText = new System.Windows.Forms.RichTextBox();
+            this.addButton = new FontAwesome.Sharp.IconButton();
+            this.emptyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 217);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1077, 568);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1077, 442);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // descriptionText
+            // 
+            this.descriptionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionText.Location = new System.Drawing.Point(23, 11);
+            this.descriptionText.Margin = new System.Windows.Forms.Padding(14);
+            this.descriptionText.Name = "descriptionText";
+            this.descriptionText.Size = new System.Drawing.Size(559, 128);
+            this.descriptionText.TabIndex = 7;
+            this.descriptionText.Text = "";
+            this.descriptionText.TextChanged += new System.EventHandler(this.descriptionText_TextChanged);
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.addButton.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.addButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.addButton.IconSize = 32;
+            this.addButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addButton.Location = new System.Drawing.Point(23, 146);
+            this.addButton.Name = "addButton";
+            this.addButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.addButton.Rotation = 0D;
+            this.addButton.Size = new System.Drawing.Size(107, 43);
+            this.addButton.TabIndex = 8;
+            this.addButton.Text = "Add";
+            this.addButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // emptyLabel
+            // 
+            this.emptyLabel.AutoSize = true;
+            this.emptyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyLabel.ForeColor = System.Drawing.Color.White;
+            this.emptyLabel.Location = new System.Drawing.Point(216, 158);
+            this.emptyLabel.Name = "emptyLabel";
+            this.emptyLabel.Size = new System.Drawing.Size(0, 31);
+            this.emptyLabel.TabIndex = 9;
             // 
             // Newsfeed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1077, 568);
+            this.ClientSize = new System.Drawing.Size(1077, 659);
+            this.Controls.Add(this.emptyLabel);
+            this.Controls.Add(this.descriptionText);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Newsfeed";
             this.Text = "Newsfeed";
             this.Load += new System.EventHandler(this.Newsfeed_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RichTextBox descriptionText;
+        private FontAwesome.Sharp.IconButton addButton;
+        private System.Windows.Forms.Label emptyLabel;
     }
 }

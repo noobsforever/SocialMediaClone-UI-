@@ -62,7 +62,7 @@ namespace SocialMediaClone
                                 item[i].Margin = new Padding(14, 14, 14, 14);
                                 flowLayoutPanel1.Controls.Add(item[i]);
                                 i++;
-
+                                emptyLabel.Text = "";
                             }
 
                         }
@@ -70,7 +70,10 @@ namespace SocialMediaClone
                     }
                 }
             }
-
+            if (i == 0)
+            {
+                emptyLabel.Text = "You Have no Friends....";
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -70,12 +70,21 @@ namespace SocialMediaClone
                             item[i].Margin = new Padding(14, 14, 14, 14);
                             flowLayoutPanel1.Controls.Add(item[i]);
                             i++;
+                            emptyLabel.Text = "";
                         }
                     }
                 }
             }
+            if (i == 0)
+            {
+                emptyLabel.Text = "You have no Pending Notifications...";
+            }
 
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

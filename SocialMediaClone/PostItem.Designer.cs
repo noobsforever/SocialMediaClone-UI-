@@ -38,6 +38,8 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.likeLabel = new System.Windows.Forms.Label();
+            this.commentLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,6 +81,7 @@
             this.deleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.deleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // commentButton
             // 
@@ -128,6 +131,7 @@
             this.dislikeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dislikeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.dislikeButton.UseVisualStyleBackColor = false;
+            this.dislikeButton.Click += new System.EventHandler(this.dislikeButton_Click);
             // 
             // likeButton
             // 
@@ -199,6 +203,32 @@
             this.panel2.Size = new System.Drawing.Size(807, 71);
             this.panel2.TabIndex = 1;
             // 
+            // likeLabel
+            // 
+            this.likeLabel.AutoSize = true;
+            this.likeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.likeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likeLabel.ForeColor = System.Drawing.Color.White;
+            this.likeLabel.Location = new System.Drawing.Point(35, 241);
+            this.likeLabel.Name = "likeLabel";
+            this.likeLabel.Size = new System.Drawing.Size(16, 18);
+            this.likeLabel.TabIndex = 10;
+            this.likeLabel.Text = "0";
+            this.likeLabel.Click += new System.EventHandler(this.likeLabel_Click);
+            // 
+            // commentLabel
+            // 
+            this.commentLabel.AutoSize = true;
+            this.commentLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.commentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commentLabel.ForeColor = System.Drawing.Color.White;
+            this.commentLabel.Location = new System.Drawing.Point(410, 193);
+            this.commentLabel.Name = "commentLabel";
+            this.commentLabel.Size = new System.Drawing.Size(16, 18);
+            this.commentLabel.TabIndex = 11;
+            this.commentLabel.Text = "0";
+            this.commentLabel.Visible = false;
+            // 
             // descriptionLabel
             // 
             this.descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -210,13 +240,15 @@
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.ReadOnly = true;
             this.descriptionLabel.Size = new System.Drawing.Size(807, 188);
-            this.descriptionLabel.TabIndex = 3;
+            this.descriptionLabel.TabIndex = 4;
             this.descriptionLabel.Text = resources.GetString("descriptionLabel.Text");
             // 
             // PostItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.commentLabel);
+            this.Controls.Add(this.likeLabel);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -227,6 +259,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -241,6 +274,8 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label likeLabel;
+        private System.Windows.Forms.Label commentLabel;
         private System.Windows.Forms.RichTextBox descriptionLabel;
     }
 }
