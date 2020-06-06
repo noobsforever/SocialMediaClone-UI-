@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.helpButton = new FontAwesome.Sharp.IconButton();
+            this.addButton = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchBox = new System.Windows.Forms.TextBox();
@@ -39,6 +41,7 @@
             this.timelineButton = new FontAwesome.Sharp.IconButton();
             this.newsfeedButton = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +49,9 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconButton2);
+            this.panelMenu.Controls.Add(this.helpButton);
+            this.panelMenu.Controls.Add(this.addButton);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.logoutButton);
@@ -59,6 +65,50 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(239, 649);
             this.panelMenu.TabIndex = 0;
+            // 
+            // helpButton
+            // 
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.helpButton.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.helpButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.helpButton.IconSize = 32;
+            this.helpButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.helpButton.Location = new System.Drawing.Point(181, 602);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.helpButton.Rotation = 0D;
+            this.helpButton.Size = new System.Drawing.Size(52, 44);
+            this.helpButton.TabIndex = 10;
+            this.helpButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.addButton.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.addButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.addButton.IconSize = 32;
+            this.addButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addButton.Location = new System.Drawing.Point(0, 481);
+            this.addButton.Name = "addButton";
+            this.addButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.addButton.Rotation = 0D;
+            this.addButton.Size = new System.Drawing.Size(239, 54);
+            this.addButton.TabIndex = 9;
+            this.addButton.Text = "Add Faq Question";
+            this.addButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // iconButton1
             // 
@@ -142,7 +192,7 @@
             this.notificationsButton.Rotation = 0D;
             this.notificationsButton.Size = new System.Drawing.Size(239, 61);
             this.notificationsButton.TabIndex = 5;
-            this.notificationsButton.Text = "Notifications";
+            this.notificationsButton.Text = "Requests";
             this.notificationsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.notificationsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.notificationsButton.UseVisualStyleBackColor = true;
@@ -253,6 +303,29 @@
             this.panelDesktop.Size = new System.Drawing.Size(912, 649);
             this.panelDesktop.TabIndex = 2;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton2.IconSize = 32;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 535);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(239, 54);
+            this.iconButton2.TabIndex = 11;
+            this.iconButton2.Text = "Submit Feedback/Query";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +356,9 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox searchBox;
+        private FontAwesome.Sharp.IconButton addButton;
+        private FontAwesome.Sharp.IconButton helpButton;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
 

@@ -21,6 +21,7 @@ namespace SocialMediaClone
 
         public static IList<string> friends2 = new List<string>();
 
+        public static bool isAdmin;
 
     }
 }

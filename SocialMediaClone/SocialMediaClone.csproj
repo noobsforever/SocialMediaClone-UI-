@@ -83,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFaq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFaq.Designer.cs">
+      <DependentUpon>AddFaq.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,24 @@
     </Compile>
     <Compile Include="commentItem.Designer.cs">
       <DependentUpon>commentItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faq.Designer.cs">
+      <DependentUpon>Faq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="faqItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="faqItem.Designer.cs">
+      <DependentUpon>faqItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
     </Compile>
     <Compile Include="Friends.cs">
       <SubType>Form</SubType>
@@ -164,6 +188,15 @@
       <DependentUpon>Timeline.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="viewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewProfile.Designer.cs">
+      <DependentUpon>viewProfile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddFaq.resx">
+      <DependentUpon>AddFaq.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bio.resx">
       <DependentUpon>Bio.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +205,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="commentItem.resx">
       <DependentUpon>commentItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faq.resx">
+      <DependentUpon>Faq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="faqItem.resx">
+      <DependentUpon>faqItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Friends.resx">
       <DependentUpon>Friends.cs</DependentUpon>
@@ -212,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Timeline.resx">
       <DependentUpon>Timeline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewProfile.resx">
+      <DependentUpon>viewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

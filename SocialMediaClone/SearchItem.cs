@@ -129,7 +129,8 @@ namespace SocialMediaClone
 
         private void viewProfileButton_Click(object sender, EventArgs e)
         {
-
+            viewProfile view = new viewProfile(userId);
+            view.Show();
         }
 
         private void followButton_Click(object sender, EventArgs e)

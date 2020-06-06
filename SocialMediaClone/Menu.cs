@@ -45,6 +45,14 @@ namespace SocialMediaClone
         {
             ActivateButton(newsfeedButton, RGBColors.color1);
             OpenChildForm(new Newsfeed());
+            if (User.isAdmin)
+            {
+                addButton.Visible = true;
+            }
+            else
+            {
+                addButton.Visible = false;
+            }
         }
 
         public void ActivateButton(object senderBtn, Color color)
@@ -153,6 +161,24 @@ namespace SocialMediaClone
         {
             SearchResult result = new SearchResult(searchBox.Text);
             result.Show();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            AddFaq faq = new AddFaq();
+            faq.Show();
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            Faq faq = new Faq();
+            faq.Show();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback();
+            feedback.Show();
         }
     }
 }

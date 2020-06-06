@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(656, 561);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "SearchResult";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchResult";
             this.Load += new System.EventHandler(this.SearchResult_Load);
             this.ResumeLayout(false);

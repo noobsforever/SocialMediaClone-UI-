@@ -242,6 +242,7 @@
             this.descriptionLabel.Size = new System.Drawing.Size(807, 188);
             this.descriptionLabel.TabIndex = 4;
             this.descriptionLabel.Text = resources.GetString("descriptionLabel.Text");
+            this.descriptionLabel.TextChanged += new System.EventHandler(this.descriptionLabel_TextChanged);
             // 
             // PostItem
             // 

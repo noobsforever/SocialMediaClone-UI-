@@ -54,6 +54,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.viewProfileButton = new FontAwesome.Sharp.IconButton();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.viewProfileButton);
             this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.editButton);
             this.panel1.Controls.Add(this.label1);
@@ -398,6 +400,30 @@
             this.label4.TabIndex = 35;
             this.label4.Text = "First Name:";
             // 
+            // viewProfileButton
+            // 
+            this.viewProfileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.viewProfileButton.FlatAppearance.BorderSize = 0;
+            this.viewProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewProfileButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.viewProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewProfileButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.viewProfileButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.viewProfileButton.IconColor = System.Drawing.Color.Green;
+            this.viewProfileButton.IconSize = 32;
+            this.viewProfileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewProfileButton.Location = new System.Drawing.Point(386, 458);
+            this.viewProfileButton.Name = "viewProfileButton";
+            this.viewProfileButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.viewProfileButton.Rotation = 0D;
+            this.viewProfileButton.Size = new System.Drawing.Size(123, 61);
+            this.viewProfileButton.TabIndex = 61;
+            this.viewProfileButton.Text = "View Profile";
+            this.viewProfileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewProfileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.viewProfileButton.UseVisualStyleBackColor = false;
+            this.viewProfileButton.Click += new System.EventHandler(this.viewProfileButton_Click);
+            // 
             // Bio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,5 +468,6 @@
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton editButton;
         private FontAwesome.Sharp.IconButton saveButton;
+        private FontAwesome.Sharp.IconButton viewProfileButton;
     }
 }

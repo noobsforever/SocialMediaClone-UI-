@@ -146,8 +146,30 @@ namespace SocialMediaClone
 
         private void likeButton_Click(object sender, EventArgs e)
         {
+            bool dislikedFlag = false;
             var likes = Convert.ToInt32(likeLabel.Text);
-            likes++;
+            var collection1 = database.GetCollection<BsonDocument>("users");
+            var builder2 = Builders<BsonDocument>.Filter;
+            var filter3 = builder2.Eq("_id", ObjectId.Parse(User.id));
+            var result3 = collection1.Find(filter3).ToList();
+            var likeList = result3[0]["liked"].AsBsonArray.Select(p => p.AsString).ToArray();
+            var disLikeList = result3[0]["disliked"].AsBsonArray.Select(p => p.AsString).ToArray();
+            foreach (var disliked in disLikeList)
+            {
+                if (disliked == postId)
+                {
+                    
+                    dislikedFlag = true;
+                }
+            }
+            if (dislikedFlag)
+            {
+                likes+=2;
+            }
+            else
+            {
+                likes++;
+            }
             var collection = database.GetCollection<BsonDocument>("posts");
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("_id", ObjectId.Parse(postId));
@@ -172,8 +194,32 @@ namespace SocialMediaClone
 
         private void dislikeButton_Click(object sender, EventArgs e)
         {
+
+           
+            
+            bool likedFlag = false;
             var likes = Convert.ToInt32(likeLabel.Text);
-            likes--;
+            var collection1 = database.GetCollection<BsonDocument>("users");
+            var builder2 = Builders<BsonDocument>.Filter;
+            var filter3 = builder2.Eq("_id", ObjectId.Parse(User.id));
+            var result3 = collection1.Find(filter3).ToList();
+            var likeList = result3[0]["liked"].AsBsonArray.Select(p => p.AsString).ToArray();
+            var disLikeList = result3[0]["disliked"].AsBsonArray.Select(p => p.AsString).ToArray();
+            foreach (var liked in likeList)
+            {
+                if (liked == postId)
+                {
+                    likedFlag = true;
+                }
+            }
+            if (likedFlag)
+            {
+                likes -= 2;
+            }
+            else
+            {
+                likes--;
+            }
             var collection = database.GetCollection<BsonDocument>("posts");
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("_id", ObjectId.Parse(postId));
@@ -202,6 +248,11 @@ namespace SocialMediaClone
             Menu menu = new Menu();
             menu.OpenChildForm(new Timeline());
             menu.Show();
+        }
+
+        private void descriptionLabel_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

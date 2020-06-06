@@ -34,7 +34,7 @@ namespace SocialMediaClone
                 MessageBox.Show("Error");
                 throw;
             }
-            User.friends.Clear();
+            User.friends.Clear();                   //
             User.friends2.Clear();
         }
 
@@ -59,7 +59,7 @@ namespace SocialMediaClone
                 User.reputation = user1[8].ToInt32();
                 User.phone = user1[10].ToString();
                 User.relation = user1[11].ToString();
-
+                User.isAdmin = false;
 
                 var arrayOfStrings = user1["friends"].AsBsonArray.Select(p => p.AsString).ToArray();
 
@@ -91,7 +91,19 @@ namespace SocialMediaClone
                 }
                 //MessageBox.Show(User.friends2.Count.ToString());
 
+                var collection3 = database.GetCollection<BsonDocument>("adm");
+                var builder3 = Builders<BsonDocument>.Filter.Empty;
+                var result3 = collection3.Find(builder3).ToList();
 
+                foreach (var res in result3)
+                {
+
+                    if (User.username == res[1].ToString())
+                    {
+                        User.isAdmin = true;
+
+                    }
+                }
 
                 this.Hide();
                 Menu menu = new Menu();
@@ -103,6 +115,8 @@ namespace SocialMediaClone
             {
                 MessageBox.Show("Invalid email or password");
             }
+
+            
 
         }
 

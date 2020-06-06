@@ -52,6 +52,8 @@ namespace SocialMediaClone
             if (result.Count == 0)
             {
                 MessageBox.Show("No Such Users found...");
+                this.Hide();
+                this.Close();
             }
             else
             {
