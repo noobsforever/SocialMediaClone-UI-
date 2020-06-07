@@ -47,6 +47,7 @@ namespace SocialMediaClone
         public SearchItem()
         {
             InitializeComponent();
+           
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -148,13 +149,13 @@ namespace SocialMediaClone
                 var update = Builders<BsonDocument>.Update.Push("friends", userId);
                 var result = collection.UpdateOne(filter, update);
                 User.friends.Add(userId);
-                foreach (var friend in friendList2)
+
+                if(followButton.Text=="Accept Friend Request")
                 {
-                    if (friend == User.id)
-                    {
-                        User.friends2.Add(userId);
-                    }
+                    User.friends2.Add(userId);
                 }
+                       
+                  
                 if (ParentForm.Text == "Notifications")
                 {
                     ParentForm.ParentForm.Hide();
@@ -211,5 +212,10 @@ namespace SocialMediaClone
 
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
+    }
     }

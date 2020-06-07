@@ -31,7 +31,7 @@ namespace SocialMediaClone
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Connectivity Error...Please Check Your Internet...");
                 throw;
             }
             User.friends.Clear();                   //

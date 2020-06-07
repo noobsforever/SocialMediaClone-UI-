@@ -43,7 +43,7 @@ namespace SocialMediaClone
             var result = collection.Find(builder).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
             foreach (var post in result)
             {
-                foreach (var friend in User.friends2)
+                foreach (var friend in User.friends)
                 {
                     if (post[1].ToString() == friend)
                     {
@@ -61,7 +61,7 @@ namespace SocialMediaClone
             PostItem[] postItems = new PostItem[resultCount];
             foreach (var post in result)
             {
-                foreach (var friend in User.friends2)
+                foreach (var friend in User.friends)
                 {
                     if (post[1].ToString() == friend)
                     {
@@ -79,6 +79,8 @@ namespace SocialMediaClone
                         emptyLabel.Text = "";
                     }
                 }
+
+
 
 
                 if (post[1].ToString() == User.id)

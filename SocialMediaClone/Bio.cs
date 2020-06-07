@@ -21,7 +21,7 @@ namespace SocialMediaClone
         {
             
             InitializeComponent();
-            firstNameLabel.Text = User.firstName;
+            firstNameLabel.Text = User.firstName;           //loading data to labels
             lastNameLabel.Text = User.lastName;
             genderLabel.Text = User.gender;
             dobLabel.Text = User.dob;

@@ -33,7 +33,7 @@ namespace SocialMediaClone
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Connectivity Error..Please Check Your Internet Connection..");
                 throw;
             }
             User.friends.Clear();
@@ -151,9 +151,11 @@ namespace SocialMediaClone
                 {"password", passwordRegister.Text },
                 {"username", usernameRegister.Text },
                 {"reputation",30 },
-                {"friends", new BsonArray {""} },
+                {"friends", new BsonArray{ } },
                 {"phone","" },
                 {"relation","single" },
+                {"liked", new BsonArray { } },
+                {"disliked", new BsonArray {} },
 
 
             };
